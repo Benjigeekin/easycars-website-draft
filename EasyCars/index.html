@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EasyCars - Rent a car for a comfortable trip in Latvia">
+    <title>EasyCars - Premium Car Rental in Latvia</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Flatpickr CSS for custom datepickers -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+
+<body>
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo" data-link="home">
+                    <span>Easy</span>Cars
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#" data-link="home" class="active" data-i18n="nav_home">Home</a></li>
+                    <li><a href="#" data-link="fleet" data-i18n="nav_fleet">Our Fleet</a></li>
+                    <li><a href="#" data-link="terms" data-i18n="nav_terms">Terms & Conditions</a></li>
+                    <li><a href="#" data-link="contact" data-i18n="nav_contact">Contact Us</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="lang-switcher">
+                        <button class="lang-btn" aria-haspopup="true" aria-expanded="false">
+                            <span id="current-lang">EN</span> <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <ul class="lang-dropdown">
+                            <li><a href="#" data-lang="en">English (EN)</a></li>
+                            <li><a href="#" data-lang="ru">Русский (RU)</a></li>
+                            <li><a href="#" data-lang="lv">Latviešu (LV)</a></li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary" data-link="fleet" data-i18n="nav_book_now">Book Now</button>
+                    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area (SPA Sections) -->
+    <main id="app-content">
+        <!-- HOME PAGE SECTION -->
+        <section id="page-home" class="page-section active">
+            <!-- Hero Section -->
+            <div class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 data-i18n="hero_title">Rent a car for a comfortable trip.</h1>
+                        <p data-i18n="hero_subtitle">Experience a new approach to car hire in Latvia. No extra charges,
+                            no hidden costs. 24/7
+                            Roadside assistance included.</p>
+                        <div class="booking-widget">
+                            <form id="quick-book-form">
+                                <div class="widget-row">
+                                    <div class="input-group">
+                                        <label><i class="fas fa-map-marker-alt"></i> <span
+                                                data-i18n="search_pickup_location">Pick-up Location</span></label>
+                                        <select required>
+                                            <option value="" data-i18n="loc_select">Select Location</option>
+                                            <option value="rix" data-i18n="loc_rix">Riga Airport (RIX)</option>
+                                            <option value="riga" data-i18n="loc_riga">Riga Center</option>
+                                            <option value="jurmala" data-i18n="loc_jurmala">Jurmala</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group">
+                                        <label><i class="far fa-calendar-alt"></i> <span
+                                                data-i18n="search_pickup_date">Pick-up Date</span></label>
+                                        <input type="date" placeholder="DD.MM.YYYY" required>
+                                    </div>
+                                    <div class="input-group">
+                                        <label><i class="far fa-calendar-check"></i> <span
+                                                data-i18n="search_dropoff_date">Drop-off Date</span></label>
+                                        <input type="date" placeholder="DD.MM.YYYY" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-large"
+                                        data-i18n="search_btn">Search Cars</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-bg">
+                    <img src="assets/images/range_rover_hero_bg.png" alt="Range Rover driving in Latvian nature"
+                        class="hero-img">
+                    <div class="hero-overlay"></div>
+                </div>
+            </div>
+
+            <!-- Key Benefits -->
+            <section class="benefits-section py-large">
+                <div class="container">
+                    <div class="section-header text-center">
+                        <h2 data-i18n="benefits_title">Why Choose EasyCars?</h2>
+                        <p class="subtitle" data-i18n="benefits_subtitle">A completely new approach to car hire in
+                            Latvia. We guarantee no extra
+                            charges.</p>
+                    </div>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <i class="fas fa-car"></i>
+                            <h3 data-i18n="ben_new_title">New Fleet</h3>
+                            <p data-i18n="ben_new_desc">Only new cars (2019–2025 models) in perfect condition.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <i class="fas fa-gift"></i>
+                            <h3 data-i18n="ben_acc_title">Free Accessories</h3>
+                            <p data-i18n="ben_acc_desc">Free child seats and second driver included with every rental.
+                            </p>
+                        </div>
+                        <div class="benefit-card">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <h3 data-i18n="ben_del_title">Free Delivery</h3>
+                            <p data-i18n="ben_del_desc">Free transfer to anywhere in Riga, Jurmala, or RIX (3+ days).
+                            </p>
+                        </div>
+                        <div class="benefit-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3 data-i18n="ben_costs_title">No Hidden Costs</h3>
+                            <p data-i18n="ben_costs_desc">Transparent pricing and 24/7 roadside assistance included.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Cars -->
+            <section class="featured-cars pb-large bg-light">
+                <div class="container">
+                    <div class="section-header">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                            <div>
+                                <h2 data-i18n="featured_title">Featured Vehicles</h2>
+                                <p class="subtitle" data-i18n="featured_subtitle">A selection of our premium and most
+                                    popular cars.</p>
+                            </div>
+                            <a href="#" class="view-all-link" data-link="fleet"
+                                style="color: var(--clr-accent); font-weight: 600;"><span data-i18n="view_all">View All
+                                    Fleet</span> <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="cars-slider" id="featured-cars-container"
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reviews -->
+            <section class="reviews-section py-large">
+                <div class="container">
+                    <div class="section-header text-center">
+                        <h2 data-i18n="reviews_title">Customer Reviews</h2>
+                    </div>
+                    <div class="reviews-grid">
+                        <div class="review-card">
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p data-i18n="rev_1_text">"Excellent airport service. The car was brought right to the
+                                terminal, sparkling clean.
+                                Highly recommended!"</p>
+                            <h4>- Janis B.</h4>
+                        </div>
+                        <div class="review-card">
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p data-i18n="rev_2_text">"Rented a new Toyota RAV4. The process was fast, and the price was
+                                exactly what we
+                                booked. Great experience."</p>
+                            <h4>- Anna M.</h4>
+                        </div>
+                        <div class="review-card">
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p data-i18n="rev_3_text">"Free second driver and child seat was a lifesaver for our family
+                                trip. Best car hire in
+                                Riga."</p>
+                            <h4>- Markus S.</h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- FLEET PAGE SECTION -->
+        <section id="page-fleet" class="page-section" style="display: none;">
+            <div class="container py-large">
+                <div class="section-header text-center">
+                    <h2 data-i18n="fleet_title">Our Fleet</h2>
+                    <p class="subtitle" data-i18n="fleet_subtitle">Choose from our wide selection of new, premium
+                        vehicles.</p>
+                </div>
+                <!-- Fleet grid container -->
+                <div class="fleet-layout">
+                    <!-- Filters sidebar -->
+                    <div class="fleet-filters">
+                        <h3 data-i18n="filters">Filters</h3>
+                        <!-- populated by js -->
+                        <div class="filter-group">
+                            <h4 data-i18n="filter_class">Class</h4>
+                            <label><input type="checkbox" value="Premium" class="filter-class"> <span
+                                    data-i18n="class_premium">Premium</span></label>
+                            <label><input type="checkbox" value="SUV" class="filter-class"> <span
+                                    data-i18n="class_suv">SUV</span></label>
+                            <label><input type="checkbox" value="Economy" class="filter-class"> <span
+                                    data-i18n="class_economy">Economy</span></label>
+                        </div>
+                        <div class="filter-group">
+                            <h4 data-i18n="filter_trans">Transmission</h4>
+                            <label><input type="checkbox" value="Automatic" class="filter-trans"> <span
+                                    data-i18n="trans_auto">Automatic</span></label>
+                            <label><input type="checkbox" value="Manual" class="filter-trans"> <span
+                                    data-i18n="trans_manual">Manual</span></label>
+                        </div>
+                        <div class="filter-group">
+                            <h4 data-i18n="filter_fuel">Fuel</h4>
+                            <label><input type="checkbox" value="Petrol" class="filter-fuel"> <span
+                                    data-i18n="fuel_petrol">Petrol</span></label>
+                            <label><input type="checkbox" value="Diesel" class="filter-fuel"> <span
+                                    data-i18n="fuel_diesel">Diesel</span></label>
+                            <label><input type="checkbox" value="Hybrid" class="filter-fuel"> <span
+                                    data-i18n="fuel_hybrid">Hybrid</span></label>
+                        </div>
+                    </div>
+                    <!-- Cars grid -->
+                    <div class="fleet-grid" id="all-cars-container">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TERMS PAGE SECTION -->
+        <section id="page-terms" class="page-section" style="display: none;">
+            <div class="container py-large text-content">
+                <div class="section-header text-center">
+                    <h2 data-i18n="terms_title">Terms & Conditions</h2>
+                    <p class="subtitle" data-i18n="terms_subtitle">Everything you need to know about your rental.</p>
+                </div>
+
+                <div class="text-box">
+                    <h3 data-i18n="terms_drv_req">Driver Requirements</h3>
+                    <ul>
+                        <li data-i18n="terms_drv_req_1">Minimum age is 22 years.</li>
+                        <li data-i18n="terms_drv_req_2">Minimum driving experience is 3 years.</li>
+                        <li data-i18n="terms_drv_req_3">Valid Category B license required (IDP required if outside EU).
+                        </li>
+                        <li data-i18n="terms_drv_req_4">Passport or EU ID card must be presented at pick-up.</li>
+                    </ul>
+                </div>
+
+                <div class="text-box">
+                    <h3 data-i18n="terms_pay">Payment & Deposit</h3>
+                    <ul>
+                        <li data-i18n="terms_pay_1">Payment via bank transfer (pre-pay) or Credit/Debit card at pick-up
+                            (VISA, MasterCard,
+                            AMEX).</li>
+                        <li data-i18n="terms_pay_2">No cash payments accepted. No Maestro cards.</li>
+                        <li data-i18n="terms_pay_3">No cards from mobile-only banks (e.g., Revolut, N26, PaySera) for
+                            the security deposit.</li>
+                        <li data-i18n="terms_pay_4">Deposit is refunded in 5-10 calendar days.</li>
+                    </ul>
+                </div>
+
+                <div class="text-box">
+                    <h3 data-i18n="terms_ins">Insurance</h3>
+                    <p data-i18n="terms_ins_1">Standard Collision Damage Waiver (CDW) is included. The excess ranges
+                        from &euro;500 to
+                        &euro;2000 depending on the vehicle class.</p>
+                    <p data-i18n="terms_ins_2">Full insurance (0.00 EUR excess) is available as an extra service for
+                        &euro;20/day.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT PAGE SECTION -->
+        <section id="page-contact" class="page-section" style="display: none;">
+            <div class="container py-large">
+                <div class="section-header text-center">
+                    <h2 data-i18n="contact_title">Contact Us</h2>
+                    <p class="subtitle" data-i18n="contact_subtitle">We're here to help you 7 days a week.</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                    <!-- Contact Info -->
+                    <div>
+                        <div class="text-box" style="height: 100%;">
+                            <h3 data-i18n="contact_get">Get in Touch</h3>
+                            <ul style="list-style: none; margin-left: 0; margin-top: 1.5rem;">
+                                <li style="margin-bottom: 1.5rem; display: flex; align-items: flex-start; gap: 1rem;">
+                                    <i class="fas fa-map-marker-alt"
+                                        style="color: var(--clr-accent); font-size: 1.5rem; margin-top: 0.2rem;"></i>
+                                    <div>
+                                        <strong style="display: block; color: var(--clr-primary);"
+                                            data-i18n="contact_addr">Address</strong>
+                                        Riga RIX international airport.<br>Latvia, LV-1053.
+                                    </div>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; display: flex; align-items: flex-start; gap: 1rem;">
+                                    <i class="fas fa-phone"
+                                        style="color: var(--clr-accent); font-size: 1.5rem; margin-top: 0.2rem;"></i>
+                                    <div>
+                                        <strong style="display: block; color: var(--clr-primary);"
+                                            data-i18n="contact_phone">Phone</strong>
+                                        +371 22088777<br>+371 20000762
+                                    </div>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; display: flex; align-items: flex-start; gap: 1rem;">
+                                    <i class="fas fa-envelope"
+                                        style="color: var(--clr-accent); font-size: 1.5rem; margin-top: 0.2rem;"></i>
+                                    <div>
+                                        <strong style="display: block; color: var(--clr-primary);"
+                                            data-i18n="contact_email">Email</strong>
+                                        reservation@easycars.lv
+                                    </div>
+                                </li>
+                                <li style="display: flex; align-items: flex-start; gap: 1rem;">
+                                    <i class="far fa-clock"
+                                        style="color: var(--clr-accent); font-size: 1.5rem; margin-top: 0.2rem;"></i>
+                                    <div>
+                                        <strong style="display: block; color: var(--clr-primary);"
+                                            data-i18n="contact_hours">Working
+                                            Hours</strong>
+                                        09:00 to 22:00, 7 days a week.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div>
+                        <div class="text-box" style="height: 100%;">
+                            <h3 data-i18n="contact_send">Send a Message</h3>
+                            <form id="contact-form"
+                                style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
+                                <div class="input-group">
+                                    <input type="text" placeholder="Your Name" data-i18n="form_name" required>
+                                </div>
+                                <div class="input-group">
+                                    <input type="tel" placeholder="Your Phone Number" data-i18n="form_phone" required>
+                                </div>
+                                <div class="input-group">
+                                    <input type="email" placeholder="Your Email" data-i18n="form_email" required>
+                                </div>
+                                <div class="input-group">
+                                    <textarea placeholder="Your Question" data-i18n="form_msg" rows="4"
+                                        style="padding: 1rem; border: 1px solid var(--clr-border); border-radius: var(--border-radius); font-family: inherit; resize: vertical;"
+                                        required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-large" style="margin-top: 0.5rem;"
+                                    data-i18n="form_submit">Send
+                                    Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps -->
+                <div
+                    style="margin-top: 3rem; border-radius: var(--border-radius-lg); overflow: hidden; height: 400px; box-shadow: var(--shadow-sm);">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d35056.88372658428!2d23.9515!3d56.9234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eed23577d2af1d%3A0xe6bf4b6a95267ed0!2sRiga%20International%20Airport!5e0!3m2!1sen!2slv!4v1620000000000!5m2!1sen!2slv"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <a href="#" class="logo footer-logo"><span>Easy</span>Cars</a>
+                    <p data-i18n="footer_desc">EasyCars is a young and ambitious company offering a completely new
+                        approach to car hire in
+                        Latvia. Ideal for comfortable travel and business trips.</p>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="quick_links">Quick Links</h3>
+                    <ul style="padding: 0;">
+                        <li><a href="#" data-link="home" data-i18n="nav_home">Home</a></li>
+                        <li><a href="#" data-link="fleet" data-i18n="nav_fleet">Our Fleet</a></li>
+                        <li><a href="#" data-link="terms" data-i18n="nav_terms">Terms & Conditions</a></li>
+                        <li><a href="#" data-link="contact" data-i18n="nav_contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="contact_title">Contact Us</h3>
+                    <ul style="padding: 0;">
+                        <li><i class="fas fa-map-marker-alt"></i> Riga RIX international airport. Latvia, LV-1053.</li>
+                        <li><i class="fas fa-phone"></i> +371 22088777 / +371 20000762</li>
+                        <li><i class="fas fa-envelope"></i> reservation@easycars.lv</li>
+                        <li><i class="far fa-clock"></i> 09:00 to 22:00, 7 days a week.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="rights">&copy; 2026 EasyCars Latvia. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2 data-i18n="modal_title">Complete Your Reservation</h2>
+                <p class="subtitle" id="modal-car-name">Car Name Placeholder</p>
+            </div>
+
+            <form id="checkout-form" style="display: flex; flex-direction: column; flex-grow: 1; overflow: hidden;">
+                <div class="modal-body">
+                    <div class="checkout-grid">
+                        <div class="checkout-col">
+                            <h3 data-i18n="modal_rental_details">Rental Details</h3>
+                            <div class="input-group">
+                                <label data-i18n="search_pickup_location">Pick-up Location</label>
+                                <select required>
+                                    <option value="rix" data-i18n="loc_rix">Riga Airport (RIX)</option>
+                                    <option value="riga" data-i18n="loc_riga">Riga Center</option>
+                                    <option value="jurmala" data-i18n="loc_jurmala">Jurmala</option>
+                                </select>
+                            </div>
+                            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                                <div class="input-group">
+                                    <label data-i18n="search_pickup_date">Pick-up Date</label>
+                                    <input type="date" placeholder="DD.MM.YYYY" required>
+                                </div>
+                                <div class="input-group">
+                                    <label data-i18n="search_dropoff_date">Drop-off Date</label>
+                                    <input type="date" placeholder="DD.MM.YYYY" required>
+                                </div>
+                            </div>
+
+                            <h3 style="margin-top: 2rem;" data-i18n="modal_drv_info">Driver Information</h3>
+                            <div class="input-group">
+                                <input type="text" placeholder="Full Name" data-i18n="form_name" required>
+                            </div>
+                            <div class="input-group" style="margin-top: 1rem;">
+                                <input type="email" placeholder="Email Address" data-i18n="form_email" required>
+                            </div>
+                            <div class="input-group" style="margin-top: 1rem;">
+                                <input type="tel" placeholder="Phone Number" data-i18n="form_phone" required>
+                            </div>
+                        </div>
+
+                        <div class="checkout-col bg-light"
+                            style="padding: 2rem; border-radius: var(--border-radius); border: 1px solid var(--clr-border);">
+                            <h3 data-i18n="modal_extras">Extra Services</h3>
+                            <div id="extra-services-container"
+                                style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
+                                <!-- Populated by JS -->
+                            </div>
+
+                            <div
+                                style="margin-top: 2rem; padding-top: 1.5rem; border-top: 2px dashed var(--clr-border);">
+                                <label
+                                    style="display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.9rem; color: var(--clr-text-light);">
+                                    <input type="checkbox" required style="margin-top: 0.3rem;">
+                                    <span data-i18n="modal_agree">I agree to the Terms & Conditions and confirm I meet
+                                        the driver requirements (min.
+                                        22 years old, 3 years experience).</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer"
+                    style="padding-top: 1.5rem; display: flex; justify-content: flex-end; gap: 1rem; border-top: 1px solid var(--clr-border); margin-top: 1rem;">
+                    <button type="button" class="btn btn-outline close-btn" data-i18n="modal_cancel">Cancel</button>
+                    <button type="submit" class="btn btn-primary btn-large" data-i18n="modal_confirm">Confirm
+                        Reservation</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Flatpickr JS & Locales -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/ru.js"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/lv.js"></script>
+
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
